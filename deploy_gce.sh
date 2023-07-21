@@ -1,17 +1,19 @@
 #!/bin/bash
 
+# Usege: ./deploy_gce.sh <TOKEN>
+
 # シェルの引数TOKENをセット
 TOKEN=("$@")[0]
 
-# 変数の設定
+# インスタンス設定
 INSTANCE_NAME="free-instance"
 ZONE="us-west1-b"
 MACHINE_TYPE="e2-micro"
 IMAGE_FAMILY="cos-101-lts"
 DISK_SIZE="25GB"
-DEPLOY_CONTAINER="rikitaro/py-run"  # デプロイコンテナイメージ名とタグに置き換えてください
+DEPLOY_CONTAINER="rikitaro/py-run"
 
-# 既存の同名インスタンスの確認と削除
+# 既存の同名インスタンスがあれば削除
 EXISTING_INSTANCE=$(gcloud compute instances list --filter="name=$INSTANCE_NAME" --format="value(name)")
 if [ -n "$EXISTING_INSTANCE" ]; then
   echo "Deleting existing instance: $EXISTING_INSTANCE"
