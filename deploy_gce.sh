@@ -3,7 +3,7 @@
 # Usege: ./deploy_gce.sh <TOKEN>
 
 # シェルの引数TOKENをセット
-TOKEN=("$@")[0]
+TOKEN="$1"
 
 # インスタンス設定
 INSTANCE_NAME="free-instance"
@@ -30,7 +30,7 @@ gcloud compute instances create $INSTANCE_NAME \
     --boot-disk-size=$DISK_SIZE \
     --boot-disk-type=pd-standard \
     --metadata=startup-script="#! /bin/bash
-sudo docker run --restart=always -d $DEPLOY_CONTAINER -e TOKEN=$TOKEN
+sudo docker run -e TOKEN=$TOKEN --restart=always -d $DEPLOY_CONTAINER
 "
 
 echo "Instance created: $INSTANCE_NAME"
