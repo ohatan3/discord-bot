@@ -1,8 +1,12 @@
 # This example requires the 'members' and 'message_content' privileged intents to function.
 
+import os
 import discord
 from discord.ext import commands
 import random
+
+# 環境変数からトークンを取得
+token = os.environ['TOKEN']
 
 description = '''An example bot to showcase the discord.ext.commands extension
 module.
@@ -76,4 +80,4 @@ async def _bot(ctx):
     await ctx.send('Yes, the bot is cool.')
 
 
-bot.run('MTEzMTg3NDE5OTIzODEwMzEwMQ.GqCLaw.8DFU142dACqv2ZLbsTIGggELJeH4npqnaFqvNw')
+bot.run(token)
