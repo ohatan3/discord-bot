@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# シェルの引数TOKENをセット
+TOKEN=("$@")[0]
+
 # 変数の設定
 INSTANCE_NAME="free-instance"
 ZONE="us-west1-b"
@@ -7,7 +10,6 @@ MACHINE_TYPE="e2-micro"
 IMAGE_FAMILY="cos-101-lts"
 DISK_SIZE="25GB"
 DEPLOY_CONTAINER="rikitaro/py-run"  # デプロイコンテナイメージ名とタグに置き換えてください
-TOKEN="MTEzMTg3NDE5OTIzODEwMzEwMQ.Gm_0_9.njnDUQ8RHuwvN1QKfwnO7ckfEMpZ5HVQQl6Mmc"
 
 # 既存の同名インスタンスの確認と削除
 EXISTING_INSTANCE=$(gcloud compute instances list --filter="name=$INSTANCE_NAME" --format="value(name)")
