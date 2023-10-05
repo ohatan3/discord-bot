@@ -4,12 +4,12 @@
 
 ## ファイルの説明
 ### deploy_gce.sh
-* ローカル環境から実行するとGCEのインスタンスにデプロイしそのまま起動できる
-* 既にインスタンスが存在した場合、削除して作り直す
+* ローカル環境から実行するとGCEのインスタンスを作成しそのまま起動できる
+* 既に同名のインスタンスが存在した場合、削除して作り直す
 * GCEの永久無料枠(e2-micro)を利用
 
 ### main.py
-* discord botの本体（公式のサンプル動かしてるだけ）
+* discord botの本体（公式のサンプル動かしてるだけX_x）
 
 ### dockerfile
 * GCEでこのプログラムを起動と同時に動かすためのもの
@@ -17,7 +17,7 @@
 * 変更なければdocker build等触らないでよい
 
 ### requirements.txt
-* 通常のpython requirements.txt
+* pythonのrequirements.txt
 
 ## 開発のやり方メモ
 以下でデプロイまでできる
