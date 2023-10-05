@@ -1,14 +1,19 @@
 # O_o
+## requirements
+* gcloud CLI
+
 ## file
 ### deploy_gce.sh
-* ローカル環境からGCEのインスタンスにデプロイする
+* ローカル環境から実行するとGCEのインスタンスにデプロイできる
 * 既にインスタンスが存在した場合、削除して作り直す
+* GCEの永久無料枠(e2-micro)を利用
 
 ### main.py
 * discord botの本体（公式のサンプル動かしてるだけ）
 
 ### dockerfile
-* GCEでpythonのプログラムを1発で動かすためだけの存在。既にdockerhubへ公開しているのでもうビルドしないはず。
+* GCEでこのプログラムを起動と同時に動かすためのもの
+* 既にdockerhubへ公開しているのでもう変更なければdockerビルドとかはしなくてよい
 
 ### requirements.txt
 * 普通のrequirements.txt
