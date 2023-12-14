@@ -5,6 +5,7 @@
 ## ファイルの説明
 ### deploy_gce.sh
 * ローカル環境から実行するとGCEのインスタンスを作成しそのまま起動できる
+  * インスタンス作成時の実行コマンド：`sudo docker run -e TOKEN=$TOKEN --restart=always -d $DEPLOY_CONTAINER`
 * 既に同名のインスタンスが存在した場合、削除して作り直す
 * GCEの永久無料枠(e2-micro)を利用
 
